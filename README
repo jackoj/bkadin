@@ -1,1 +1,6 @@
-pip install -U mezzanine
+sudo pip install -U mezzanine
+sudo pip install south
+
+# in mysql
+# >> create database bkadin;
+# configure settings_local to use mysql
