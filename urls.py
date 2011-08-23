@@ -13,6 +13,7 @@ admin.autodiscover()
 urlpatterns = patterns("",
     ("^admin/", include(admin.site.urls)),
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    url("^(?P<slug>.*)/$", "ecms.views.topic_page", name="topic_page"),
     ("^", include("mezzanine.urls")),
 )
 

@@ -4,3 +4,12 @@ sudo pip install south
 # in mysql
 # >> create database bkadin;
 # configure settings_local to use mysql
+
+# make sure that mysql is installed
+sudo apt-get install mysql-server
+sudo apt-get install libmysqlclient-dev
+
+# if 'python -c "import MySQLdb"' fails
+sudo apt-get install python-mysqldb
+
+python manage.py install --noinput 
