@@ -1,0 +1,1 @@
+instead of inheriting from richtext, inherit from page, but add the richtext field
