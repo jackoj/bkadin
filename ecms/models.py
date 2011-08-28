@@ -12,9 +12,16 @@ NUM_ARTICLE_PAGES = 5
 
 class TopicPage(Page, RichText):
     def get_article_pages(self):
-        pages = Page.objects.filter(parent=self)
-        pages = sorted(pages, key=lambda page: page.publish_date, reverse=True)
-        return pages[:5]
+        selected_pages = [page for page in self.displayed_pages.all()]
+        if len(selected_pages) < NUM_ARTICLE_PAGES:
+            pages = Page.objects.filter(parent=self)
+            pages = sorted(pages, key=lambda page: page.publish_date, reverse=True)
+            for page in pages:
+                if page not in selected_pages:
+                    selected_pages.append(page)
+                    if selected_pages >= NUM_ARTICLE_PAGES:
+                        break
+        return selected_pages[:NUM_ARTICLE_PAGES]
     
 
     class Meta:

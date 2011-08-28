@@ -4,7 +4,7 @@ from mezzanine.pages.admin import RichTextPageAdmin
 from mezzanine.pages.models import Page
 from ecms.models import TopicPage
 
-topic_page_extra_fieldsets = ((None, {"fields": ("notes",)}),)
+topic_page_extra_fieldsets = ((None, {"fields": ("notes",'displayed_pages',)}),)
 
 #class DisplayedPageInline(admin.TabularInline):
 ##    list_display = ('id', )
