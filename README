@@ -5,6 +5,8 @@ sudo pip install south
 # >> create database bkadin;
 # configure settings_local to use mysql
 
+# In mac osx, 'libmysqlclient.18.dylib' might not be in path. If so:
+sudo ln -s /usr/local/mysql-5.5.11-osx10.6-x86_64/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
 # make sure that mysql is installed
 sudo apt-get install mysql-server
 sudo apt-get install libmysqlclient-dev
@@ -13,3 +15,8 @@ sudo apt-get install libmysqlclient-dev
 sudo apt-get install python-mysqldb
 
 python manage.py install --noinput 
+
+
+#Dealing with keywords
+# * disable them in core.models.py, core.admin.py
+# * ALTER TABLE pages_page MODIFY keywords_string VARCHAR(500);

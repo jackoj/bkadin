@@ -1,0 +1,14 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags %}
+
+{% block main %}{{ block.super }}
+
+{% editable page.topicpage.content %}
+{{ page.richtextpage.content|richtext_filter|safe }}
+{% endeditable %}
+
+{% for article_page in page.topicpage.get_article_pages %}
+<p><a href="/{{article_page.slug}}">{{ article_page.description }}</a></p>
+{% endfor %}
+{% endblock %}
