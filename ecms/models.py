@@ -2,13 +2,18 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
-from mezzanine.pages.models import Page, RichText
+from mezzanine.pages.models import Page, RichText, RichTextPage
 
 # The members of Page will be inherited by the Gallery model, such as
 # title, slug, etc. In this example the Gallery model is essentially a
 # container for GalleryImage instances.
 
 NUM_ARTICLE_PAGES = 5
+
+class RichTextData(models.Model):
+    header = models.CharField(_("header"), max_length=100)
+    homepage_header = models.CharField(_("homepage_header"), max_length=100)
+    rich_text_page = models.ForeignKey(RichTextPage, editable=False)
 
 class TopicPage(Page, RichText):
     def get_article_pages(self):
