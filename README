@@ -14,9 +14,14 @@ sudo apt-get install libmysqlclient-dev
 # if 'python -c "import MySQLdb"' fails
 sudo apt-get install python-mysqldb
 
-python manage.py install --noinput 
+python manage.py install --noinput
 
 
 #Dealing with keywords
 # * disable them in core.models.py, core.admin.py
 # * ALTER TABLE pages_page MODIFY keywords_string VARCHAR(500);
+
+# 127.0.0.1 in media url hack
+#if not addr:
+#    addr = "bkadin.daniyalzade.com"
+#parts = (addr, s["ADMIN_MEDIA_PREFIX"])

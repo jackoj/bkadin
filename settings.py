@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 
 ######################
 # MEZZANINE SETTINGS #
@@ -146,6 +147,8 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # Don't forget to use absolute paths, not relative paths.
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
+SITE_TITLE = "bilenkadin"
+SITE_TAGLINE = u"kadin hakkında herşey"
 LOGIN_URL = "/admin/"
 LOGIN_REDIRECT_URL = "/admin/"
 
