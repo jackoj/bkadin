@@ -30,7 +30,9 @@ class TopicPage(Page, RichText):
 
     notes = models.TextField("Notes")
     displayed_pages = models.ManyToManyField(Page,
-        related_name='displayed_pages')
+        related_name='displayed_pages',
+        blank=True,
+        )
 
 def main():
     print User.objects.all()
