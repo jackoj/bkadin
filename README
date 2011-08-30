@@ -25,3 +25,8 @@ python manage.py install --noinput
 #if not addr:
 #    addr = "bkadin.daniyalzade.com"
 #parts = (addr, s["ADMIN_MEDIA_PREFIX"])
+
+# mysql -u root --default-character-set=utf8 bkadin < ~/dump/bkadin_08_28_2011.sql
+#
+%% ENABLE DELETE %%
+pages.models -> modify can_delete to True
