@@ -1,15 +1,21 @@
 from copy import deepcopy
 from django.contrib import admin
 from mezzanine.pages.admin import RichTextPageAdmin
-from mezzanine.pages.models import Page
-from ecms.models import TopicPage
+from mezzanine.pages.models import Page, RichTextPage
+from ecms.models import TopicPage, RichTextData
 
 topic_page_extra_fieldsets = ((None, {"fields": ("notes",'displayed_pages',)}),)
 
-#class DisplayedPageInline(admin.TabularInline):
-##    list_display = ('id', )
-##    fields = ('slug', )
-#    model = Page
+class RichTextDataInlineAdmin(admin.TabularInline):
+    model = RichTextData
+    extra = 1
+    max_num = 1
+
+class ModifiedRichTextPageAdmin(RichTextPageAdmin):
+    inlines = (RichTextDataInlineAdmin,)
+    fieldsets = deepcopy(RichTextPageAdmin.fieldsets)
+admin.site.unregister(RichTextPage)
+admin.site.register(RichTextPage, ModifiedRichTextPageAdmin)
 
 class TopicPageAdmin(RichTextPageAdmin):
     #inlines = (DisplayedPageInline,)

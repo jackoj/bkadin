@@ -11,8 +11,16 @@ from mezzanine.pages.models import Page, RichText, RichTextPage
 NUM_ARTICLE_PAGES = 5
 
 class RichTextData(models.Model):
-    header = models.CharField(_("header"), max_length=100)
-    homepage_header = models.CharField(_("homepage_header"), max_length=100)
+    # Chosen to be TextField to get the admin to look proper. Otherwise,
+    # they should ide
+    header = models.TextField(_("header"),
+                              max_length=100,
+                              blank=True,
+                              )
+    homepage_header = models.TextField(_("homepage_header"),
+                                       max_length=100,
+                                       blank=True,
+                                       )
     rich_text_page = models.ForeignKey(RichTextPage, editable=False)
 
 class TopicPage(Page, RichText):
@@ -27,7 +35,7 @@ class TopicPage(Page, RichText):
                     if selected_pages >= NUM_ARTICLE_PAGES:
                         break
         return selected_pages[:NUM_ARTICLE_PAGES]
-    
+
 
     class Meta:
         verbose_name = _("Topic Page")
