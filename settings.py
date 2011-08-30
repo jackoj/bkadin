@@ -234,6 +234,7 @@ try:
 except ImportError:
     pass
 
+DEFAULT_CHARSET = 'utf-8'
 
 ####################
 # DYNAMIC SETTINGS #
