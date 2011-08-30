@@ -32,7 +32,7 @@ class TopicPage(Page, RichText):
             for page in pages:
                 if page not in selected_pages:
                     selected_pages.append(page)
-                    if selected_pages >= NUM_ARTICLE_PAGES:
+                    if len(selected_pages) >= NUM_ARTICLE_PAGES:
                         break
         return selected_pages[:NUM_ARTICLE_PAGES]
 
