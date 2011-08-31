@@ -1,6 +1,7 @@
 {% extends "pages/page.html" %}
 
 {% load mezzanine_tags %}
+{% load tags %}
 
 {% block main %}{{ block.super }}
 
@@ -9,6 +10,19 @@
 {% endeditable %}
 
 {% for article_page in page.topicpage.get_article_pages %}
-<p><a href="/{{article_page.slug}}">{{ article_page.description }}</a></p>
+<div class="grid_6">
+<div class="article_summary">
+    <a href="/{{article_page.slug}}">
+        <p class="article_title">{{ article_page.title }}</p>
+    </a>
+    <p>{% display article_page.richtextpage %}</p>
+    {% for richtextdata in article_page.richtextpage.richtextdata_set.all %}
+        <p class="article_header">{{ richtextdata.header }}</p>
+    {% endfor %}
+</div>
+</div>
+{% if not forloop.counter0|divisibleby:2 %}
+    <div class='clear' style="overflow:hidden;"></div>
+{% endif %}
 {% endfor %}
 {% endblock %}

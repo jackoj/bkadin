@@ -16,6 +16,13 @@
 
 body {background:#E3E4FF;}
 
+.article_summary {
+    border-style: solid;
+    border-width: 1px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
 .container_12 {background:#fff;}
 #grid-middle {background:#fff; min-height:100%;}
 #grid-middle img {max-width:400px;}
