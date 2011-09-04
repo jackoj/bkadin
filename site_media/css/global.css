@@ -2,10 +2,10 @@
 /* 960 Grid */
 .grid {padding:30px 0;}
 #grid-header {text-align:center; background:#fff; padding:25px; margin:0;}
-#grid-header h1 {color:#999; font-size:400%; font-weight:bold; border:0;
+#grid-header h1 {color:#000; font-size:400%; border:0;
     margin:0;}
-#grid-header h2 {color:#999; font-size:120%; font-weight:normal;
-    font-style:italic; margin:5px;}
+#grid-header h2 {color:#000; font-size:120%; font-weight:normal;
+    margin:5px;}
 
 #grid-top {background:#C13D55; border-bottom:1px solid #999;
     text-align:center; padding:0;}
@@ -15,6 +15,21 @@
 #grid-top .active {background:#eee;}
 
 body {background:#E3E4FF;}
+
+.article_img {
+    height: 100px;
+    width: 100px;
+}
+
+.article_header {
+    margin: 0px;
+    padding: 0px;
+}
+
+.article_title {
+    margin: 0px;
+    padding: 0px;
+}
 
 .article_summary {
     border-style: solid;
@@ -47,7 +62,7 @@ body {background:#E3E4FF;}
 #grid-bottom a {color:#eee; text-decoration:none;}
 
 /* Elements */
-* {font-family:Garamond, Georgia, serif;}
+* {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 h1 {font-size:250%; border-bottom:1px solid #ccc; font-weight:normal;}
 h2 {font-size:150%;}
 h3 {font-weight:normal; margin:20px 0 10px;}
