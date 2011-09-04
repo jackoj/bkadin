@@ -12,12 +12,10 @@
 {% for article_page in page.topicpage.get_article_pages %}
 <div class="grid_6">
 <div class="article_summary">
-    <a href="/{{article_page.slug}}">
-        <p class="article_title">{{ article_page.title }}</p>
-    </a>
-    <p>{% display article_page.richtextpage %}</p>
+    <a href="/{{article_page.slug}}">{{ article_page.title }}</a>
     {% for richtextdata in article_page.richtextpage.richtextdata_set.all %}
         <p class="article_header">{{ richtextdata.header }}</p>
+        <img class="article_img" src="{{ richtextdata.main_image }}"</img>
     {% endfor %}
 </div>
 </div>

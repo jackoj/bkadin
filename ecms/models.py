@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from filebrowser_safe.fields import FileBrowseField
+
 # Create your models here.
 from mezzanine.pages.models import Page, RichText, RichTextPage
 
@@ -21,6 +23,11 @@ class RichTextData(models.Model):
                                        max_length=100,
                                        blank=True,
                                        )
+    main_image = FileBrowseField(
+            blank=True,
+            null=True,
+            max_length=100,
+            )
     rich_text_page = models.ForeignKey(RichTextPage, editable=False)
 
 class TopicPage(Page, RichText):
