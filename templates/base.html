@@ -21,12 +21,10 @@
 
 </head>
 <body id="{% block body_id %}{% endblock %}">
-
+    <div class="container_12 bodyContainer">
 {% if settings.SITE_TITLE or settings.SITE_TAGLINE %}
 <div id="grid-header">
-    {% if settings.SITE_TITLE %}
-    <h1>{{ settings.SITE_TITLE }}</h1>
-    {% endif %}
+    <p class='title'><b class='titlebold'>istan</b>bella</h2>
     {% if settings.SITE_TAGLINE %}
     <h2>{{ settings.SITE_TAGLINE }}</h2>
     {% endif %}
@@ -83,7 +81,7 @@
         </div>
     </div>
 </div>
-
+</div>
 {% include "includes/footer_scripts.html" %}
 
 </body>

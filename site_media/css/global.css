@@ -1,6 +1,10 @@
 
 /* 960 Grid */
 .grid {padding:30px 0;}
+.bodyContainer {
+    margin: auto;
+    width: 960px;
+}
 #grid-header {text-align:center; background:#fff; padding:25px; margin:0;}
 #grid-header h1 {color:#000; font-size:400%; border:0;
     margin:0;}
@@ -10,12 +14,27 @@
 #grid-top {background:#C13D55; border-bottom:1px solid #999;
     text-align:center; padding:0;}
 #grid-top li {display:inline-block;
-    border-right:1px solid #999; padding:10px 20px;}
+    border-right:1px solid #999; padding:5px 5px;}
 #grid-top .first {border-left:1px solid #999;}
+
+.first {
+    margin: 0;
+    padding: 0;
+}
 #grid-top .active {background:#eee;}
 
-body {background:#E3E4FF;}
+body {
+    background:#E7E9ED;
+}
 
+.title {
+    font-size: 50px;
+    margin: 5px;
+}
+
+.titlebold {
+    color: #C13D55;
+}
 .article_img {
     height: 100px;
     width: 100px;
@@ -70,18 +89,34 @@ h4 {font-weight:bold; margin-top:10px;}
 h5 {font-weight:bold; margin-top:20px;}
 h2, p, #breadcrumb-menu, #description, .paging, .share, #comments, .comment {
     margin:20px 0;}
-a {color:#336;}
+a {
+    color:0;
+}
+#grid-top a {
+    color:#FFF;
+}
+
+#grid-top a:hover {
+    color:#000;
+}
+
+#grid-top a:active {
+    color:#000;
+}
+
+.first {
+    margin: 0;
+    padding: 0;
+}
 table {margin-bottom:30px;}
 td, th {padding:4px;}
 p {line-height:150%;}
-li {line-height:130%;}
+li {line-height:100%;}
 pre, pre *, code, code * {font-family:monospace;}
 pre {padding:15px;}
 
 /* Navigation */
 #breadcrumb-menu li {list-style-type:none; display:inline; margin-left:0px;}
-.active, .active .active {font-style:italic;}
-.active li {font-style:normal;}
 .paging {border-top:1px solid #ccc;}
 .paging li {padding:0 5px; margin:0 !important;}
 .paging * {display:inline;}
