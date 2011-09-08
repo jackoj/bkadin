@@ -5,22 +5,25 @@
 
 {% block main %}{{ block.super }}
 
+<div id="featured" >
+	<ul class="ui-tabs-nav">
+    {% for article_page in page.topicpage.get_article_pages %}
+    <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-{{forloop.counter0}}"><a href="#fragment-{{forloop.counter0}}"><img src="{{ article_page.richtextpage.richtextdata_set.all.0.main_image }}" alt="" /><span>{{ article_page.richtextpage.richtextdata_set.all.0.header }}</span></a></li>
+    {% endfor %}
+	</ul>
+    {% for article_page in page.topicpage.get_article_pages %}
+	<div id="fragment-{{forloop.counter0}}" class="ui-tabs-panel" style="">
+		<img src="{{ article_page.richtextpage.richtextdata_set.all.0.main_image }}" alt="" />
+		<div class="info" >
+		<h2><a href="#" >{{ article_page.richtextpage.richtextdata_set.all.0.header }}</a></h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt condimentum lacus. Pellentesque ut diam....<a href="#" >read more</a></p>
+		</div>
+	</div>
+    {% endfor %}
+</div>
+
 {% editable page.topicpage.content %}
 {{ page.richtextpage.content|richtext_filter|safe }}
 {% endeditable %}
 
-{% for article_page in page.topicpage.get_article_pages %}
-<div class="grid_6">
-<div class="article_summary">
-    <a href="/{{article_page.slug}}">{{ article_page.title }}</a>
-    {% for richtextdata in article_page.richtextpage.richtextdata_set.all %}
-        <p class="article_header">{{ richtextdata.header }}</p>
-        <img class="article_img" src="{{ richtextdata.main_image }}"</img>
-    {% endfor %}
-</div>
-</div>
-{% if not forloop.counter0|divisibleby:2 %}
-    <div class='clear' style="overflow:hidden;"></div>
-{% endif %}
-{% endfor %}
 {% endblock %}
