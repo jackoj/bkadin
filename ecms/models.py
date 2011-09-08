@@ -16,11 +16,11 @@ class RichTextData(models.Model):
     # Chosen to be TextField to get the admin to look proper. Otherwise,
     # they should ide
     header = models.TextField(_("header"),
-                              max_length=100,
+                              max_length=512,
                               blank=True,
                               )
     homepage_header = models.TextField(_("homepage_header"),
-                                       max_length=100,
+                                       max_length=512,
                                        blank=True,
                                        )
     main_image = FileBrowseField(
