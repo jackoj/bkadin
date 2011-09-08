@@ -17,17 +17,30 @@
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/960.css" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/global.css" type="text/css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/featured.css" type="text/css" />
+    <script type="text/javascript" src="{{ settings.CONTENT_MEDIA_URL }}/js/jquery-1.4.4.min.js"></script> 
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-ui-1.5.3.min.js"></script> 
+    <script language="javascript">
+    $(document).ready(function(){  
+        $("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);  
+    });  
+</script>
+    
     {% block extra_head %}{% endblock %}
 
 </head>
 <body id="{% block body_id %}{% endblock %}">
     <div class="container_12 bodyContainer">
 {% if settings.SITE_TITLE or settings.SITE_TAGLINE %}
+<div id="grid-top-links">
+</div>
 <div id="grid-header">
     <p class='title'><b class='titlebold'>istan</b>bella</h2>
     {% if settings.SITE_TAGLINE %}
     <h2>{{ settings.SITE_TAGLINE }}</h2>
     {% endif %}
+</div>
+<div id="separator">
 </div>
 {% endif %}
 
@@ -36,10 +49,6 @@
 </div>
 
 <div class="container_12 clearfix">
-
-    <div id="grid-left" class="grid_3 grid">
-        {% page_menu "pages/menus/tree.html" %}
-    </div>
 
     <div id="grid-middle" class="grid_9 grid">
         <div class="gutter">
