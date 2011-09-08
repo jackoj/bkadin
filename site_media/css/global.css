@@ -5,11 +5,51 @@
     margin: auto;
     width: 960px;
 }
-#grid-header {text-align:center; background:#fff; padding:25px; margin:0;}
+#grid-top-links {
+    border-bottom: 1px dotted #CCC;
+    text-align:center;
+    background:#fff;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 10px;
+}
+
+#grid-header {
+    background:#fff;
+    padding-left:20px;
+    padding:0;
+    margin:0 20px;
+}
+
 #grid-header h1 {color:#000; font-size:400%; border:0;
     margin:0;}
-#grid-header h2 {color:#000; font-size:120%; font-weight:normal;
-    margin:5px;}
+
+#separator {
+    background: url(http://cdn.sheknows.com/redesign/header.png) bottom center no-repeat;
+    background-image: url(http://cdn.sheknows.com/redesign/header.png);
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-position-x: 50%;
+    background-position-y: 100%;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    margin-top: -5px;
+}
+
+#grid-header h2 {
+    color:#666;
+    font-size:120%;
+    font-weight:normal;
+    margin-top:0;
+    margin-left:5px;
+}
+
+#grid-header p {
+    line-height: 100%;
+}
 
 #grid-top {background:#C13D55; border-bottom:1px solid #999;
     text-align:center; padding:0;}
