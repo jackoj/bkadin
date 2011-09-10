@@ -10,7 +10,7 @@ from mezzanine.pages.models import Page, RichText, RichTextPage
 # title, slug, etc. In this example the Gallery model is essentially a
 # container for GalleryImage instances.
 
-NUM_ARTICLE_PAGES = 5
+NUM_ARTICLE_PAGES = 4
 
 class RichTextData(models.Model):
     # Chosen to be TextField to get the admin to look proper. Otherwise,
@@ -33,16 +33,9 @@ class RichTextData(models.Model):
 class TopicPage(Page, RichText):
     def get_article_pages(self):
         selected_pages = [page for page in self.displayed_pages.all()]
-        if len(selected_pages) < NUM_ARTICLE_PAGES:
-            pages = Page.objects.filter(parent=self)
-            pages = sorted(pages, key=lambda page: page.publish_date, reverse=True)
-            for page in pages:
-                if page not in selected_pages:
-                    selected_pages.append(page)
-                    if len(selected_pages) >= NUM_ARTICLE_PAGES:
-                        break
-        return selected_pages[:NUM_ARTICLE_PAGES]
-
+        pages = Page.objects.filter(parent=self)
+        pages = sorted(pages, key=lambda page: page._order)
+        return pages if len(pages) < NUM_ARTICLE_PAGES else pages[:NUM_ARTICLE_PAGES]
 
     class Meta:
         verbose_name = _("Topic Page")

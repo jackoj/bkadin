@@ -8,15 +8,15 @@
 <div id="featured" >
 	<ul class="ui-tabs-nav">
     {% for article_page in page.topicpage.get_article_pages %}
-    <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-{{forloop.counter0}}"><a href="#fragment-{{forloop.counter0}}"><img src="{{ article_page.richtextpage.richtextdata_set.all.0.main_image }}" alt="" /><span>{{ article_page.richtextpage.richtextdata_set.all.0.header }}</span></a></li>
+    <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-{{forloop.counter0}}"><a href="#fragment-{{forloop.counter0}}"><img src="{{ article_page.richtextpage.richtextdata_set.all.0.main_image }}" alt="" /><span>{{ article_page.title }}</span></a></li>
     {% endfor %}
 	</ul>
     {% for article_page in page.topicpage.get_article_pages %}
 	<div id="fragment-{{forloop.counter0}}" class="ui-tabs-panel" style="">
 		<img src="{{ article_page.richtextpage.richtextdata_set.all.0.main_image }}" alt="" />
 		<div class="info" >
-		<h2><a href="#" >{{ article_page.richtextpage.richtextdata_set.all.0.header }}</a></h2>
-        <p><a href="/{{article_page.slug}}" >{{ article_page.richtextpage.richtextdata_set.all.0.header }}</a></p>
+		<h2><a href="/{{article_page.slug}}" >{{ article_page.title }}</a></h2>
+        <p><a href="/{{article_page.slug}}" >{{ article_page.richtextpage.richtextdata_set.all.0.homepage_header }}</a></p>
 		</div>
 	</div>
     {% endfor %}
