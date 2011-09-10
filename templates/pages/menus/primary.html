@@ -5,13 +5,13 @@
     {% for page in page_branch %}
     {% if forloop.first %}
     <li id="primary-menu-home" class="first{% if on_home %} active{% endif %}">
-        <a href="{% url home %}">{% trans "Home" %}</a>
+        <a href="{% url home %}" class="{% if on_home %} active{% endif %}">{% trans "Home" %}</a>
     </li>
     {% endif %}
     {% if page.in_navigation %}
     <li id="primary-menu-{{ page.html_id }}" 
         class="{% if page.is_current_or_ascendant %}active{% endif %}{% if forloop.last %} last{% endif %}">
-        <a class='topnav' href="{% url page page.slug %}">{{ page.title }}</a>
+        <a class='topnav {% if page.is_current_or_ascendant %}active{% endif %}' href="{% url page page.slug %}">{{ page.title }}</a>
     </li>
     {% endif %}
     {% endfor %}

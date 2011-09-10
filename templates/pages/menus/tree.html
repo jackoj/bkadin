@@ -7,7 +7,7 @@
 
     {% if page.is_primary and forloop.first %}
 	<li class="first{% if on_home %} active{% endif %}">
-	    <a href="{% url home %}">{% trans "Home" %}</a>
+	    <a href="{% url home %}" class="active">{% trans "Home" %}</a>
 	</li>
 	{% endif %}
 
@@ -16,7 +16,7 @@
         {% if not top_level and forloop.first %} first{% endif %}
         {% if forloop.last %} last{% endif %}"
         id="tree-menu-{{ page.html_id }}">
-		<a href="{% url page page.slug %}">{{ page.title }}</a>
+		<a class="{% if page.is_current_or_ascendant %}active{% endif %}" href="{% url page page.slug %}">{{ page.title }}</a>
 		{# remove this if tag to always show all nav items #}
 		{% if settings.PAGES_MENU_SHOW_ALL or page.is_current_or_ascendant %}
 		{% page_menu page %}

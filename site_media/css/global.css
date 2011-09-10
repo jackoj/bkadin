@@ -61,7 +61,15 @@
     margin: 0;
     padding: 0;
 }
-#grid-top .active {background:#eee;}
+#grid-top .active {
+    background:#eee;
+    color:black;
+}
+
+#grid-top :hover {
+    background:#eee;
+    color:black;
+}
 
 body {
     background:#E7E9ED;
@@ -132,15 +140,12 @@ h2, p, #breadcrumb-menu, #description, .paging, .share, #comments, .comment {
 a {
     color:0;
 }
+
 #grid-top a {
     color:#FFF;
 }
 
 #grid-top a:hover {
-    color:#000;
-}
-
-#grid-top a:active {
     color:#000;
 }
 
