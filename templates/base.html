@@ -52,12 +52,15 @@
 
     <div id="grid-middle" class="grid_9 grid">
         <div class="gutter">
-            <h1>{% block title %}{% endblock %}</h1>
+            {% block page_header %}{% endblock %}
+            <p class='article_title'>{% block title %}{% endblock %}</p>
+            <!--
             <div id="breadcrumb-menu">
                 {% block breadcrumb_menu %}
                     {% page_menu "pages/menus/breadcrumb.html" %}
                 {% endblock %}
             </div>
+            -->
             {% block main %}{% endblock %}
         </div>
     </div>
