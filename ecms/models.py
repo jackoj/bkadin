@@ -5,12 +5,11 @@ from filebrowser_safe.fields import FileBrowseField
 
 # Create your models here.
 from mezzanine.pages.models import Page, RichText, RichTextPage
+from ecms.constants import NUM_ARTICLE_PAGES
 
 # The members of Page will be inherited by the Gallery model, such as
 # title, slug, etc. In this example the Gallery model is essentially a
 # container for GalleryImage instances.
-
-NUM_ARTICLE_PAGES = 4
 
 class RichTextData(models.Model):
     # Chosen to be TextField to get the admin to look proper. Otherwise,

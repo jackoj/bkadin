@@ -4,6 +4,8 @@
 
 {% block page_header %}
 {% include "pages/socialmedia.html" %}
+<p class='article_title'>{% editable page.title %}{{ page.title }}{% endeditable %}
+</p>
 {% endblock %}
 {% block main %}{{ block.super }}
 

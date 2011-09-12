@@ -48,12 +48,15 @@
     {% page_menu "pages/menus/primary.html" %}
 </div>
 
-<div class="container_12 clearfix">
+<div class="container_12 content_container clearfix">
 
-    <div id="grid-middle" class="grid_9 grid">
+    <div id="grid-middle" class="grid_12 grid">
+        {% if on_home %}
+        <div class="home_container">
+        {% else %}
         <div class="gutter">
+        {% endif %}
             {% block page_header %}{% endblock %}
-            <p class='article_title'>{% block title %}{% endblock %}</p>
             <!--
             <div id="breadcrumb-menu">
                 {% block breadcrumb_menu %}
