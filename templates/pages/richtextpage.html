@@ -2,6 +2,9 @@
 
 {% load mezzanine_tags %}
 
+<!--{% load i18n mezzanine_tags disqus_tags %}
+{% load tags %} -->
+
 {% block page_header %}
 {% include "pages/socialmedia.html" %}
 <p class='article_title'>{% editable page.title %}{{ page.title }}{% endeditable %}
@@ -19,4 +22,6 @@
 {% endeditable %}
 
 {% include "pages/socialmedia.html" %}
+{% include "pages/facebook_comments.html" %}
+<!-- {% include "pages/disqus.html" %} -->
 {% endblock %}
