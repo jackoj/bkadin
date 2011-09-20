@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p /var/log/bkadinfgi
+exec /usr/bin/svlogd -tt /var/log/bkadinfgi/

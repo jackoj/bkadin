@@ -1,0 +1,3 @@
+#!/bin/sh
+exec 2>&1
+exec python /home/eytan/git/bkadin/manage.py runfcgi daemonize=false host=0.0.0.0 port=8081 maxchildren=30 maxspare=30 minspare=20
