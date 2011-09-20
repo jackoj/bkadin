@@ -26,8 +26,7 @@
 </div>
 
 {% for page in page_branch %}
-<div class="grid_4">
-<div class="topic_display">
+<div class="topic_display grid_4">
     <h2>
         <a href="/{{page.slug}}">{{ page.title }}</a>
     </h2>
@@ -43,7 +42,6 @@
         </div>
         {% endif %}
     {% endfor %}
-</div>
 </div>
 {% if forloop.counter0|should_clear %}
     <div class='clear' style="overflow:hidden;"></div>

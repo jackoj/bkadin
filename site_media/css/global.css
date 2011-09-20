@@ -120,7 +120,13 @@ body {
 }
 
 .container_12 {background:#fff;}
-#grid-middle {background:#fff; min-height:100%;}
+#grid-middle {
+    background:#fff;
+    min-height:100%;
+    width:100%;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
 #grid-middle img {max-width:400px;}
 .gutter {
     padding:0 30px;
@@ -268,11 +274,14 @@ textarea {width:100%;}
 
 /* Home */
 .topic_display {
-    width: 300px;
+    width: 300px !important;
+    margin-right: 8px !important;
+    margin-left: 8px !important;
+	border:2px solid #eee;
 }
 .topic_display h2{
     height: 40px;
-    background: #FAA634; 
+    background: white; 
     color: white;
     line-height: 1.8em;
     font-family: Arial, Helvetica, sans-serif;
@@ -280,9 +289,10 @@ textarea {width:100%;}
 }
 
 .topic_display a{
-    color: white;
+    color: gray;
     font-weight: normal;
     text-decoration:none;
+    margin-left:10px;
 }
 
 .topic_display :hover{
