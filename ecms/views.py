@@ -1,5 +1,5 @@
-from django.contrib.auth import REDIRECT_FIELD_NAME
-from django.http import HttpResponse
+from django.contrib.auth import REDIRECT_FIELD_NAME, logout
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect
 from django.template import RequestContext
 from django.utils.http import urlquote
@@ -46,3 +46,7 @@ def topic_page(request, slug, template="pages/page.html", extra_context=None):
     request_context = RequestContext(request, context)
     t = select_template(templates, request_context)
     return HttpResponse(t.render(request_context))
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')

@@ -1,10 +1,13 @@
 
 from django.conf.urls.defaults import *
+from django.contrib.auth.views import logout
 from django.contrib import admin
 
 from mezzanine.conf import settings
 from mezzanine.utils.urls import static_urls
 from mezzanine.core.views import direct_to_template
+
+from ecms.views import logout_view
 
 admin.autodiscover()
 
@@ -28,6 +31,7 @@ if getattr(settings, "PACKAGE_NAME_FILEBROWSER") in settings.INSTALLED_APPS:
 urlpatterns += patterns("",
     ("^admin/", include(admin.site.urls)),
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    (r'^logout.html$', logout_view),
 #    url("^(?P<slug>.*)/$", "ecms.views.topic_page", name="topic_page"),
     ("^", include("mezzanine.urls")),
 )

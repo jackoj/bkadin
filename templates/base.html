@@ -39,7 +39,10 @@
 <div id="grid-top-links">
 </div>
 <div id="grid-header">
-    <p class='title'><b class='titlebold'>istan</b>bella</h2>
+    <p class='title'><b class='titlebold'>istan</b>bella</p>
+    {% if user.is_authenticated %}
+        <a href='/logout.html' style="float:right;">logout</a>
+    {% endif %}
     {% if settings.SITE_TAGLINE %}
     <h2>{{ settings.SITE_TAGLINE }}</h2>
     {% endif %}
