@@ -21,6 +21,19 @@
 	</div>
     {% endfor %}
 </div>
+<div class="displaypages" >
+    {% for article_page in page.topicpage.get_article_pages %}
+	<div class="displaypage" style="">
+        <div>
+		<img src="{{ article_page.richtextpage.richtextdata_set.all.0.main_image }}" alt="" />
+    </div>
+		<div class="content clearfix" >
+		<a href="/{{article_page.slug}}" >{{ article_page.title }}</a>
+        <p>{{ article_page.richtextpage.richtextdata_set.all.0.homepage_header }}</p>
+		</div>
+	</div>
+    {% endfor %}
+</div>
 
 
 <!--

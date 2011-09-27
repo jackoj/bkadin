@@ -26,6 +26,10 @@
     margin:0 20px;
 }
 
+#grid-header a{
+    text-decoration: none;
+}
+
 #grid-header h1 {color:#000; font-size:400%; border:0;
     margin:0;}
 
@@ -320,6 +324,43 @@ textarea {width:100%;}
     border-top: 1px dotted gray;
     margin: 0px;
     padding: 0px;
+}
+
+.displaypages {
+border-top: 3px solid #555;
+float: left;
+margin-top: 15px;
+padding-top: 5px;
+width: 623px;
+}
+
+.displaypage {
+border-bottom: 1px solid #EAEBEB;
+padding: 16px 0;
+}
+
+.displaypage a{
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.displaypage a:hover {
+    text-decoration:underline;
+    font-weight: bold;
+}
+
+.displaypage p {
+    margin: 10px 0;
+    line-height: 100%;
+}
+
+.displaypage img{ 
+	float:left; margin:2px 5px; 
+	background:#fff; 
+	padding:2px; 
+	border:1px solid #eee;
+    height: 50px;
+    width: 80px;
 }
 
 .article_display p {
